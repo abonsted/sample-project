@@ -54,6 +54,7 @@ customer_order_with_updates as (
         order_items.low_cost_items,
         order_items.mid_cost_items,
         order_items.high_cost_items,
+        order_items.average_part_retail_price,
         order_items.status,
         order_items.priority_int,
         customer_orders.customer_id,

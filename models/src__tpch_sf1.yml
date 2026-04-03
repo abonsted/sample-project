@@ -126,3 +126,49 @@ sources:
             data_type: text
 
             # don't need to list all columns, although it is recommended to
+
+    # Adding part source table
+      - name: part 
+        columns:
+          - name: p_partkey
+            data_type: int
+            data_tests: 
+              - unique
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('snowflake_sample_shop', 'lineitem')
+                    field: l_partkey
+
+          - name: p_name
+            data_type: string
+            data_tests:
+          
+          - name: p_mfgr
+            data_type: string
+            data_tests:
+
+          - name: p_brand
+            data_type: string
+            data_tests:
+
+          - name: p_type
+            data_type: string
+            data_tests:
+
+          - name: p_size
+            data_type: int
+            data_tests:
+
+          - name: p_container
+            data_type: string
+            data_tests:
+
+          - name: p_retailprice
+            data_type: number
+            data_tests:
+              - non_negative
+
+          - name: p_comment 
+            data_type: string
+            data_tests: 

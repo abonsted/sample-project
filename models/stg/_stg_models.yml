@@ -122,3 +122,28 @@ models:
 
       - name: receipt_date
         data_type: date
+
+  - name: stg__part 
+    description: >
+      Cleansed part data.
+    columns:
+      - name: part_id
+        data_type: int
+        description: "{{ doc('part_id') }}"
+        data_tests:
+          - unique
+      
+      - name: name
+        data_type: string
+
+      - name: brand
+        data_type: string
+      
+      - name: type
+        data_type: string
+      
+      - name: retail_price
+        data_type: double
+      
+      - name: comment
+        data_type: string
