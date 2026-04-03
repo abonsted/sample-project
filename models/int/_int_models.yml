@@ -69,3 +69,8 @@ models:
         data_type: int
         data_tests:
           - non_negative # CUSTOM TEST (at: tests/generic/non_negative.sql)
+
+      - name: average_part_retail_price
+        data_type: double
+        data_tests:
+          - non_negative # CUSTOM TEST (at: tests/generic/non_negative.sql)

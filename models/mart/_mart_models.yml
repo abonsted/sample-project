@@ -46,13 +46,19 @@ models:
         data_tests:
           - non_negative # CUSTOM TEST
 
+      - name: average_part_retail_price
+        data_type: double
+        data_tests:
+          - non_negative # CUSTOM TEST (at: tests/generic/non_negative.sql)
+
       - name: customer_id
         data_type: int
         description: "{{ doc('customer_id') }}" # description defined in docs block (at: /docs/descriptions.md)
         data_tests:
           - relationships:
-              to: ref('dim__customer')
-              field: customer_id # foreign key to match on
+              arguments:
+                to: ref('dim__customer')
+                field: customer_id # foreign key to match on
 
       - name: customer_name
         data_type: string
@@ -160,3 +166,6 @@ models:
 
       - name: receipt_date
         data_type: date
+
+      - name: part_name
+        data_type: string
